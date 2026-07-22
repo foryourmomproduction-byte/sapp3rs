@@ -3,9 +3,9 @@ import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import madyard from "@/assets/project-madyard.jpg";
-import onair from "@/assets/project-onair.jpg";
+import olicrom from "@/assets/project-onair.jpg";
 
-const slides = [hero1, hero2, madyard, hero3, onair];
+const slides = [hero1, hero2, madyard, hero3, olicrom];
 
 export function Hero() {
   const [i, setI] = useState(0);
