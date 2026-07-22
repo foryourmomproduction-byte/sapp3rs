@@ -3,7 +3,7 @@ import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import madyard from "@/assets/project-madyard.jpg";
-import olicrom from "@/assets/project-onair.jpg";
+import olicrom from "@/assets/project-olicrom.jpg";
 
 const slides = [hero1, hero2, madyard, hero3, olicrom];
 
