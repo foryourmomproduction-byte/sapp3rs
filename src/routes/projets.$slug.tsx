@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getProject, projects } from "@/lib/projects";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/projets/$slug")({
   loader: ({ params }) => {
@@ -37,18 +38,48 @@ export const Route = createFileRoute("/projets/$slug")({
 
 function ProjectPage() {
   const { project } = Route.useLoaderData();
+
+  const images =
+    project.heroImages && project.heroImages.length > 0
+      ? project.heroImages
+      : [project.cover];
+
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    setCurrentImage(0);
+
+    if (images.length <= 1) return;
+
+    const interval = window.setInterval(() => {
+      setCurrentImage((current) => (current + 1) % images.length);
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, [project.slug, images.length]);
+
   return (
     <main className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32">
       <Link to="/" className="text-xs uppercase tracking-[0.3em] text-muted-foreground hover:text-primary">← Retour</Link>
       <p className="mt-10 text-xs uppercase tracking-[0.3em] text-primary">{project.category}</p>
       <h1 className="font-display mt-4 text-5xl leading-none md:text-8xl">{project.title}</h1>
-      <div className="mt-12 aspect-[16/10] w-full overflow-hidden rounded-md">
-        <img src={project.cover} alt={project.title} className="h-full w-full object-cover" />
-      </div>
+      <div className="relative mt-12 aspect-[16/10] w-full overflow-hidden rounded-md">
+  {images.map((image, index) => (
+    <img
+      key={image}
+      src={image}
+      alt={`${project.title} — image ${index + 1}`}
+      className={`absolute inset-0 h-full w-full object-cover transition-all ease-linear ${
+        index === currentImage
+          ? "scale-105 opacity-100 duration-[6000ms]"
+          : "scale-100 opacity-0 duration-[1800ms]"
+      }`}
+    />
+  ))}
+</div>
       <div className="mt-16 grid gap-12 md:grid-cols-12 md:gap-16">
         <dl className="md:col-span-4 space-y-6 text-sm">
           <div><dt className="text-muted-foreground">Client</dt><dd>{project.client}</dd></div>
-          <div><dt className="text-muted-foreground">Année</dt><dd>{project.year}</dd></div>
           <div><dt className="text-muted-foreground">Livrables</dt><dd>{project.deliverables.join(" · ")}</dd></div>
         </dl>
         <div className="md:col-span-8 space-y-8 text-lg">
