@@ -16,7 +16,6 @@ import olicrom1 from "@/assets/projects/olicrom/1.jpg";
 import olicrom2 from "@/assets/projects/olicrom/2.jpg";
 import olicrom3 from "@/assets/projects/olicrom/3.jpg";
 import olicrom4 from "@/assets/projects/olicrom/4.jpg";
-import olicromVideo from "@/assets/projects/olicrom/video.mp4";
 
 export type ProjectMedia = {
   type:
@@ -83,10 +82,6 @@ export const projects: Project[] = [
   cover: olicrom,
 
   media: [
-  {
-    type: "video",
-    src: olicromVideo,
-  },
   {
     type: "image",
     src: olicrom1,
