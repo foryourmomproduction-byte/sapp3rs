@@ -9,20 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
-import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as ProjetsSlugRouteImport } from './routes/projets.$slug'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
-  id: '/mentions-legales',
-  path: '/mentions-legales',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConfidentialiteRoute = ConfidentialiteRouteImport.update({
@@ -30,9 +26,19 @@ const ConfidentialiteRoute = ConfidentialiteRouteImport.update({
   path: '/confidentialite',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjetsSlugRoute = ProjetsSlugRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/confidentialite': typeof ConfidentialiteRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/contact': typeof ApiContactRoute
   '/projets/$slug': typeof ProjetsSlugRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/confidentialite': typeof ConfidentialiteRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/contact': typeof ApiContactRoute
   '/projets/$slug': typeof ProjetsSlugRoute
 }
 export interface FileRoutesById {
@@ -61,6 +69,7 @@ export interface FileRoutesById {
   '/confidentialite': typeof ConfidentialiteRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/contact': typeof ApiContactRoute
   '/projets/$slug': typeof ProjetsSlugRoute
 }
 export interface FileRouteTypes {
@@ -70,6 +79,7 @@ export interface FileRouteTypes {
     | '/confidentialite'
     | '/mentions-legales'
     | '/sitemap.xml'
+    | '/api/contact'
     | '/projets/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -77,6 +87,7 @@ export interface FileRouteTypes {
     | '/confidentialite'
     | '/mentions-legales'
     | '/sitemap.xml'
+    | '/api/contact'
     | '/projets/$slug'
   id:
     | '__root__'
@@ -84,6 +95,7 @@ export interface FileRouteTypes {
     | '/confidentialite'
     | '/mentions-legales'
     | '/sitemap.xml'
+    | '/api/contact'
     | '/projets/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -92,23 +104,17 @@ export interface RootRouteChildren {
   ConfidentialiteRoute: typeof ConfidentialiteRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiContactRoute: typeof ApiContactRoute
   ProjetsSlugRoute: typeof ProjetsSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mentions-legales': {
-      id: '/mentions-legales'
-      path: '/mentions-legales'
-      fullPath: '/mentions-legales'
-      preLoaderRoute: typeof MentionsLegalesRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/confidentialite': {
@@ -118,11 +124,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConfidentialiteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projets/$slug': {
@@ -140,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConfidentialiteRoute: ConfidentialiteRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiContactRoute: ApiContactRoute,
   ProjetsSlugRoute: ProjetsSlugRoute,
 }
 export const routeTree = rootRouteImport

@@ -1,4 +1,4 @@
-import heroVideo from "@/assets/hero.mp4";
+const heroVideo = "/videos/hero-web.mp4";
 
 export function Hero() {
   return (
@@ -26,9 +26,7 @@ export function Hero() {
 
         <h1 className="font-display max-w-5xl text-[clamp(2.5rem,7vw,6.5rem)] font-medium leading-[0.95] tracking-tight">
           J&apos;aide les marques et les événements
-          <br />
-          à créer des images qui{" "}
-          <span className="italic text-primary">attirent</span>.
+          <br />à créer des images qui <span className="italic text-primary">attirent</span>.
         </h1>
 
         <div className="mt-10 flex flex-wrap items-center gap-6">

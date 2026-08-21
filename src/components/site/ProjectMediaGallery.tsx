@@ -1,27 +1,15 @@
-import {
-  useRef,
-  type MutableRefObject,
-  type TouchEvent,
-} from "react";
+import { useRef, type MutableRefObject, type TouchEvent } from "react";
 
-import type {
-  Project,
-  ProjectMedia,
-} from "@/lib/projects";
+import type { Project, ProjectMedia } from "@/lib/projects";
 
-import {
-  MediaDots,
-  NavigationArrows,
-} from "./ProjectNavigation";
+import { MediaDots, NavigationArrows } from "./ProjectNavigation";
 import { ProjectMediaSlide } from "./ProjectMediaSlide";
 
 type ProjectMediaGalleryProps = {
   project: Project;
   media: ProjectMedia[];
   currentIndex: number;
-  videoRefs: MutableRefObject<
-    Array<HTMLVideoElement | null>
-  >;
+  videoRefs: MutableRefObject<Array<HTMLVideoElement | null>>;
   onSelect: (index: number) => void;
   onPrevious: () => void;
   onNext: () => void;
@@ -41,31 +29,22 @@ export function ProjectMediaGallery({
   const touchStartX = useRef<number | null>(null);
   const touchCurrentX = useRef<number | null>(null);
 
-  const handleTouchStart = (
-    event: TouchEvent<HTMLDivElement>
-  ) => {
+  const handleTouchStart = (event: TouchEvent<HTMLDivElement>) => {
     const x = event.touches[0].clientX;
     touchStartX.current = x;
     touchCurrentX.current = x;
   };
 
-  const handleTouchMove = (
-    event: TouchEvent<HTMLDivElement>
-  ) => {
-    touchCurrentX.current =
-      event.touches[0].clientX;
+  const handleTouchMove = (event: TouchEvent<HTMLDivElement>) => {
+    touchCurrentX.current = event.touches[0].clientX;
   };
 
   const handleTouchEnd = () => {
-    if (
-      touchStartX.current === null ||
-      touchCurrentX.current === null
-    ) {
+    if (touchStartX.current === null || touchCurrentX.current === null) {
       return;
     }
 
-    const distance =
-      touchStartX.current - touchCurrentX.current;
+    const distance = touchStartX.current - touchCurrentX.current;
 
     if (distance > 50) {
       onNext();
@@ -105,11 +84,7 @@ export function ProjectMediaGallery({
             nextLabel="Média suivant"
           />
 
-          <MediaDots
-            total={media.length}
-            activeIndex={currentIndex}
-            onSelect={onSelect}
-          />
+          <MediaDots total={media.length} activeIndex={currentIndex} onSelect={onSelect} />
         </>
       )}
     </div>

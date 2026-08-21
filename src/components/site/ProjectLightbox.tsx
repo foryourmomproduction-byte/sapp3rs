@@ -1,17 +1,8 @@
-import {
-  useRef,
-  type TouchEvent,
-} from "react";
+import { useRef, type TouchEvent } from "react";
 
-import type {
-  Project,
-  ProjectMedia,
-} from "@/lib/projects";
+import type { Project, ProjectMedia } from "@/lib/projects";
 
-import {
-  ImageDots,
-  NavigationArrows,
-} from "./ProjectNavigation";
+import { ImageDots, NavigationArrows } from "./ProjectNavigation";
 
 type ProjectLightboxProps = {
   project: Project;
@@ -41,31 +32,22 @@ export function ProjectLightbox({
     return null;
   }
 
-  const handleTouchStart = (
-    event: TouchEvent<HTMLDivElement>
-  ) => {
+  const handleTouchStart = (event: TouchEvent<HTMLDivElement>) => {
     const x = event.touches[0].clientX;
     touchStartX.current = x;
     touchCurrentX.current = x;
   };
 
-  const handleTouchMove = (
-    event: TouchEvent<HTMLDivElement>
-  ) => {
-    touchCurrentX.current =
-      event.touches[0].clientX;
+  const handleTouchMove = (event: TouchEvent<HTMLDivElement>) => {
+    touchCurrentX.current = event.touches[0].clientX;
   };
 
   const handleTouchEnd = () => {
-    if (
-      touchStartX.current === null ||
-      touchCurrentX.current === null
-    ) {
+    if (touchStartX.current === null || touchCurrentX.current === null) {
       return;
     }
 
-    const distance =
-      touchStartX.current - touchCurrentX.current;
+    const distance = touchStartX.current - touchCurrentX.current;
 
     if (distance > 50) {
       onNext();
@@ -102,16 +84,11 @@ export function ProjectLightbox({
 
       <div
         className="relative flex h-full w-full items-center justify-center"
-        onClick={(event) =>
-          event.stopPropagation()
-        }
+        onClick={(event) => event.stopPropagation()}
       >
         <img
           src={media.src}
-          alt={
-            media.alt ??
-            `${project.title} — image agrandie`
-          }
+          alt={media.alt ?? `${project.title} — image agrandie`}
           draggable={false}
           className="max-h-full max-w-full select-none object-contain"
         />
@@ -126,11 +103,7 @@ export function ProjectLightbox({
               lightbox
             />
 
-            <ImageDots
-              indexes={imageIndexes}
-              activeIndex={currentIndex}
-              onSelect={onSelect}
-            />
+            <ImageDots indexes={imageIndexes} activeIndex={currentIndex} onSelect={onSelect} />
           </>
         )}
       </div>

@@ -1,22 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
-import type {} from "@tanstack/react-start";
-import { projects } from "@/lib/projects";
+import { projects, exclusiveProjects } from "@/lib/projects";
 
-const BASE_URL = "";
+const BASE_URL = "https://sapp3rs.lovable.app";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
+        const allProjects = [...projects, ...exclusiveProjects];
+
         const entries = [
-          { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/mentions-legales", changefreq: "yearly", priority: "0.3" },
-          { path: "/confidentialite", changefreq: "yearly", priority: "0.3" },
-          ...projects.map((p) => ({ path: `/projets/${p.slug}`, changefreq: "monthly", priority: "0.8" })),
+          "/",
+          "/mentions-legales",
+          "/confidentialite",
+          ...allProjects.map((project) => `/projets/${project.slug}`),
         ];
-        const urls = entries.map((e) => `  <url>\n    <loc>${BASE_URL}${e.path}</loc>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`);
-        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>`;
-        return new Response(xml, { headers: { "Content-Type": "application/xml", "Cache-Control": "public, max-age=3600" } });
+
+        const urls = entries
+          .map(
+            (path) => `  <url>
+    <loc>${BASE_URL}${path}</loc>
+  </url>`,
+          )
+          .join("\n");
+
+        const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>`;
+
+        return new Response(xml, {
+          headers: {
+            "Content-Type": "application/xml; charset=utf-8",
+            "Cache-Control": "public, max-age=3600",
+          },
+        });
       },
     },
   },

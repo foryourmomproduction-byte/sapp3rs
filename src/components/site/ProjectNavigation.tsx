@@ -27,9 +27,7 @@ export function NavigationArrows({
           onPrevious();
         }}
         aria-label={previousLabel}
-        className={`${baseClass} ${styleClass} ${
-          lightbox ? "left-2 md:left-6" : "left-4"
-        }`}
+        className={`${baseClass} ${styleClass} ${lightbox ? "left-2 md:left-6" : "left-4"}`}
       >
         ←
       </button>
@@ -41,9 +39,7 @@ export function NavigationArrows({
           onNext();
         }}
         aria-label={nextLabel}
-        className={`${baseClass} ${styleClass} ${
-          lightbox ? "right-2 md:right-6" : "right-4"
-        }`}
+        className={`${baseClass} ${styleClass} ${lightbox ? "right-2 md:right-6" : "right-4"}`}
       >
         →
       </button>
@@ -72,9 +68,7 @@ export function MediaDots({
           }}
           aria-label={`Afficher le média ${index + 1}`}
           className={`h-2 rounded-full transition-all ${
-            index === activeIndex
-              ? "w-6 bg-foreground"
-              : "w-2 bg-foreground/50"
+            index === activeIndex ? "w-6 bg-foreground" : "w-2 bg-foreground/50"
           }`}
         />
       ))}
@@ -103,9 +97,7 @@ export function ImageDots({
           }}
           aria-label="Afficher cette image"
           className={`h-2 rounded-full transition-all ${
-            mediaIndex === activeIndex
-              ? "w-6 bg-white"
-              : "w-2 bg-white/40"
+            mediaIndex === activeIndex ? "w-6 bg-white" : "w-2 bg-white/40"
           }`}
         />
       ))}

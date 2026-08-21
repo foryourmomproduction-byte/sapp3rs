@@ -1,18 +1,13 @@
 import type { MutableRefObject } from "react";
 
-import type {
-  Project,
-  ProjectMedia,
-} from "@/lib/projects";
+import type { Project, ProjectMedia } from "@/lib/projects";
 
 type ProjectMediaSlideProps = {
   project: Project;
   item: ProjectMedia;
   index: number;
   isActive: boolean;
-  videoRefs: MutableRefObject<
-    Array<HTMLVideoElement | null>
-  >;
+  videoRefs: MutableRefObject<Array<HTMLVideoElement | null>>;
   onOpenLightbox: (index: number) => void;
 };
 
@@ -24,9 +19,7 @@ export function ProjectMediaSlide({
   videoRefs,
   onOpenLightbox,
 }: ProjectMediaSlideProps) {
-  const visibilityClass = isActive
-    ? "z-[1] opacity-100"
-    : "pointer-events-none opacity-0";
+  const visibilityClass = isActive ? "z-[1] opacity-100" : "pointer-events-none opacity-0";
 
   if (item.type === "youtube-link") {
     return (
@@ -34,6 +27,17 @@ export function ProjectMediaSlide({
         item={item}
         project={project}
         platform="YouTube"
+        className={visibilityClass}
+      />
+    );
+  }
+
+  if (item.type === "instagram-link") {
+    return (
+      <ExternalMediaCard
+        item={item}
+        project={project}
+        platform="Instagram"
         className={visibilityClass}
       />
     );
@@ -47,10 +51,7 @@ export function ProjectMediaSlide({
         {isActive && (
           <iframe
             src={item.src}
-            title={
-              item.title ??
-              `${project.title} — vidéo YouTube`
-            }
+            title={item.title ?? `${project.title} — vidéo YouTube`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             loading="lazy"
@@ -70,10 +71,7 @@ export function ProjectMediaSlide({
           <div className="h-full w-full max-w-[520px] bg-white">
             <iframe
               src={item.src}
-              title={
-                item.title ??
-                `${project.title} — contenu Instagram`
-              }
+              title={item.title ?? `${project.title} — contenu Instagram`}
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               allowFullScreen
               loading="lazy"
@@ -87,6 +85,8 @@ export function ProjectMediaSlide({
   }
 
   if (item.type === "video") {
+    const isBorn4More = project.slug === "born4more";
+
     return (
       <div
         className={`absolute inset-0 h-full w-full transition-opacity duration-1000 ${visibilityClass}`}
@@ -101,7 +101,7 @@ export function ProjectMediaSlide({
           autoPlay={isActive}
           loop
           playsInline
-          controls
+          {...(!isBorn4More && { controls: true })}
           preload="metadata"
           aria-label={`${project.title} — vidéo ${index + 1}`}
           className="h-full w-full bg-black object-contain"
@@ -109,6 +109,8 @@ export function ProjectMediaSlide({
       </div>
     );
   }
+
+  const imageFit = item.fit === "contain" ? "object-contain" : "object-cover";
 
   return (
     <button
@@ -124,12 +126,9 @@ export function ProjectMediaSlide({
     >
       <img
         src={item.src}
-        alt={
-          item.alt ??
-          `${project.title} — image ${index + 1}`
-        }
+        alt={item.alt ?? `${project.title} — image ${index + 1}`}
         draggable={false}
-        className={`h-full w-full select-none object-cover transition-all ease-in-out ${
+        className={`h-full w-full select-none bg-black ${imageFit} transition-all ease-in-out ${
           isActive
             ? "scale-[1.04] opacity-100 duration-[5500ms]"
             : "scale-100 opacity-0 duration-[1400ms]"
@@ -150,11 +149,7 @@ function ExternalMediaCard({
   platform: string;
   className: string;
 }) {
-  const thumbnail =
-    "thumbnail" in item &&
-    typeof item.thumbnail === "string"
-      ? item.thumbnail
-      : project.cover;
+  const thumbnail = typeof item.thumbnail === "string" ? item.thumbnail : project.cover;
 
   return (
     <a
@@ -167,10 +162,7 @@ function ExternalMediaCard({
     >
       <img
         src={thumbnail}
-        alt={
-          item.title ??
-          `${project.title} — contenu ${platform}`
-        }
+        alt={item.title ?? `${project.title} — contenu ${platform}`}
         className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
       />
 

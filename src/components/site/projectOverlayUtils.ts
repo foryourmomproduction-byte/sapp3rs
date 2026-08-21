@@ -1,11 +1,6 @@
-import type {
-  Project,
-  ProjectMedia,
-} from "@/lib/projects";
+import type { Project, ProjectMedia } from "@/lib/projects";
 
-export function getProjectMedia(
-  project: Project | null
-): ProjectMedia[] {
+export function getProjectMedia(project: Project | null): ProjectMedia[] {
   if (!project) {
     return [];
   }
@@ -31,24 +26,17 @@ export function getProjectMedia(
   ];
 }
 
-export function getImageIndexes(
-  media: ProjectMedia[]
-) {
-  return media.reduce<number[]>(
-    (indexes, item, index) => {
-      if (item.type === "image") {
-        indexes.push(index);
-      }
+export function getImageIndexes(media: ProjectMedia[]) {
+  return media.reduce<number[]>((indexes, item, index) => {
+    if (item.type === "image") {
+      indexes.push(index);
+    }
 
-      return indexes;
-    },
-    []
-  );
+    return indexes;
+  }, []);
 }
 
-export function resetVideos(
-  videos: Array<HTMLVideoElement | null>
-) {
+export function resetVideos(videos: Array<HTMLVideoElement | null>) {
   videos.forEach((video) => {
     if (!video) {
       return;
@@ -60,9 +48,7 @@ export function resetVideos(
   });
 }
 
-export function shouldAutoplayGallery(
-  media: ProjectMedia | undefined
-) {
+export function shouldAutoplayGallery(media: ProjectMedia | undefined) {
   return (
     media?.type !== "video" &&
     media?.type !== "youtube" &&

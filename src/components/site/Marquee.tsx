@@ -3,7 +3,10 @@ import { collaborations } from "@/lib/projects";
 export function Marquee() {
   const list = [...collaborations, ...collaborations];
   return (
-    <section aria-label="Collaborations" className="border-y border-border/60 bg-background py-8 overflow-hidden">
+    <section
+      aria-label="Collaborations"
+      className="border-y border-border/60 bg-background py-8 overflow-hidden"
+    >
       <div className="flex whitespace-nowrap marquee-track">
         {list.map((name, i) => (
           <div key={i} className="flex items-center gap-16 pr-16">

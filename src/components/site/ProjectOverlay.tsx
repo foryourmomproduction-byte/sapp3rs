@@ -1,10 +1,4 @@
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import type { Project } from "@/lib/projects";
 
@@ -23,39 +17,24 @@ type ProjectOverlayProps = {
   onClose: () => void;
 };
 
-export function ProjectOverlay({
-  project,
-  onClose,
-}: ProjectOverlayProps) {
-  const [currentMediaIndex, setCurrentMediaIndex] =
-    useState(0);
-  const [isLightboxOpen, setIsLightboxOpen] =
-    useState(false);
+export function ProjectOverlay({ project, onClose }: ProjectOverlayProps) {
+  const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  const videoRefs = useRef<
-    Array<HTMLVideoElement | null>
-  >([]);
+  const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
 
-  const media = useMemo(
-    () => getProjectMedia(project),
-    [project]
-  );
+  const media = useMemo(() => getProjectMedia(project), [project]);
 
   const currentMedia = media[currentMediaIndex];
 
-  const imageIndexes = useMemo(
-    () => getImageIndexes(media),
-    [media]
-  );
+  const imageIndexes = useMemo(() => getImageIndexes(media), [media]);
 
   const goToPreviousMedia = useCallback(() => {
     if (media.length <= 1) {
       return;
     }
 
-    setCurrentMediaIndex((current) =>
-      current === 0 ? media.length - 1 : current - 1
-    );
+    setCurrentMediaIndex((current) => (current === 0 ? media.length - 1 : current - 1));
   }, [media.length]);
 
   const goToNextMedia = useCallback(() => {
@@ -63,9 +42,7 @@ export function ProjectOverlay({
       return;
     }
 
-    setCurrentMediaIndex(
-      (current) => (current + 1) % media.length
-    );
+    setCurrentMediaIndex((current) => (current + 1) % media.length);
   }, [media.length]);
 
   const moveInsideLightbox = useCallback(
@@ -74,33 +51,20 @@ export function ProjectOverlay({
         return;
       }
 
-      const currentPosition = imageIndexes.indexOf(
-        currentMediaIndex
-      );
+      const currentPosition = imageIndexes.indexOf(currentMediaIndex);
 
-      const safePosition =
-        currentPosition === -1 ? 0 : currentPosition;
+      const safePosition = currentPosition === -1 ? 0 : currentPosition;
 
-      const nextPosition =
-        (safePosition +
-          direction +
-          imageIndexes.length) %
-        imageIndexes.length;
+      const nextPosition = (safePosition + direction + imageIndexes.length) % imageIndexes.length;
 
       setCurrentMediaIndex(imageIndexes[nextPosition]);
     },
-    [currentMediaIndex, imageIndexes]
+    [currentMediaIndex, imageIndexes],
   );
 
-  const goToPreviousLightboxImage = useCallback(
-    () => moveInsideLightbox(-1),
-    [moveInsideLightbox]
-  );
+  const goToPreviousLightboxImage = useCallback(() => moveInsideLightbox(-1), [moveInsideLightbox]);
 
-  const goToNextLightboxImage = useCallback(
-    () => moveInsideLightbox(1),
-    [moveInsideLightbox]
-  );
+  const goToNextLightboxImage = useCallback(() => moveInsideLightbox(1), [moveInsideLightbox]);
 
   const openLightbox = useCallback(
     (index: number) => {
@@ -111,7 +75,7 @@ export function ProjectOverlay({
       setCurrentMediaIndex(index);
       setIsLightboxOpen(true);
     },
-    [media]
+    [media],
   );
 
   useEffect(() => {
@@ -157,10 +121,7 @@ export function ProjectOverlay({
     document.body.style.overflow = "hidden";
 
     return () => {
-      document.removeEventListener(
-        "keydown",
-        handleKeyDown
-      );
+      document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
     };
   }, [
@@ -179,9 +140,7 @@ export function ProjectOverlay({
         return;
       }
 
-      const isActiveVideo =
-        index === currentMediaIndex &&
-        media[index]?.type === "video";
+      const isActiveVideo = index === currentMediaIndex && media[index]?.type === "video";
 
       video.muted = true;
 
@@ -197,34 +156,17 @@ export function ProjectOverlay({
   }, [currentMediaIndex, media]);
 
   useEffect(() => {
-    if (
-      !project ||
-      media.length <= 1 ||
-      isLightboxOpen ||
-      !shouldAutoplayGallery(currentMedia)
-    ) {
+    if (!project || media.length <= 1 || isLightboxOpen || !shouldAutoplayGallery(currentMedia)) {
       return;
     }
 
-    const interval = window.setInterval(
-      goToNextMedia,
-      5000
-    );
+    const interval = window.setInterval(goToNextMedia, 5000);
 
     return () => window.clearInterval(interval);
-  }, [
-    project,
-    media.length,
-    currentMedia,
-    isLightboxOpen,
-    goToNextMedia,
-  ]);
+  }, [project, media.length, currentMedia, isLightboxOpen, goToNextMedia]);
 
   useEffect(() => {
-    if (
-      isLightboxOpen &&
-      currentMedia?.type !== "image"
-    ) {
+    if (isLightboxOpen && currentMedia?.type !== "image") {
       setIsLightboxOpen(false);
     }
   }, [currentMedia?.type, isLightboxOpen]);
@@ -241,13 +183,10 @@ export function ProjectOverlay({
         behavior: "smooth",
       });
 
-      const messageField = document.getElementById(
-        "message"
-      ) as HTMLTextAreaElement | null;
+      const messageField = document.getElementById("message") as HTMLTextAreaElement | null;
 
       if (messageField && !messageField.value) {
-        messageField.value =
-          `Je souhaite créer un projet similaire à ${project.title}.`;
+        messageField.value = `Je souhaite créer un projet similaire à ${project.title}.`;
       }
     }, 100);
   };
@@ -261,16 +200,9 @@ export function ProjectOverlay({
         className="fixed inset-0 z-[100] overflow-y-auto bg-background/95 backdrop-blur-sm"
         onClick={onClose}
       >
-        <div
-          className="min-h-full"
-          onClick={(event) =>
-            event.stopPropagation()
-          }
-        >
+        <div className="min-h-full" onClick={(event) => event.stopPropagation()}>
           <header className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-background/80 px-6 py-4 backdrop-blur-md md:px-10">
-            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Projet
-            </span>
+            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Projet</span>
 
             <button
               type="button"
@@ -305,9 +237,7 @@ export function ProjectOverlay({
             <ProjectDetails project={project} />
 
             <div className="mt-24 border-t border-border pt-16 text-center">
-              <p className="font-display text-3xl md:text-5xl">
-                Et si c’était votre projet ?
-              </p>
+              <p className="font-display text-3xl md:text-5xl">Et si c’était votre projet ?</p>
 
               <button
                 type="button"
@@ -322,19 +252,18 @@ export function ProjectOverlay({
         </div>
       </div>
 
-      {isLightboxOpen &&
-        currentMedia.type === "image" && (
-          <ProjectLightbox
-            project={project}
-            media={currentMedia}
-            currentIndex={currentMediaIndex}
-            imageIndexes={imageIndexes}
-            onClose={() => setIsLightboxOpen(false)}
-            onSelect={setCurrentMediaIndex}
-            onPrevious={goToPreviousLightboxImage}
-            onNext={goToNextLightboxImage}
-          />
-        )}
+      {isLightboxOpen && currentMedia.type === "image" && (
+        <ProjectLightbox
+          project={project}
+          media={currentMedia}
+          currentIndex={currentMediaIndex}
+          imageIndexes={imageIndexes}
+          onClose={() => setIsLightboxOpen(false)}
+          onSelect={setCurrentMediaIndex}
+          onPrevious={goToPreviousLightboxImage}
+          onNext={goToNextLightboxImage}
+        />
+      )}
     </>
   );
 }

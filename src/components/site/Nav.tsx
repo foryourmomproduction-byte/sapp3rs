@@ -15,7 +15,7 @@ export function Nav() {
   const links = [
     { href: "#projets", label: "Projets" },
     { href: "#apropos", label: "À propos" },
-    { href: "https://instagram.com/sapp3rs", label: "Instagram", external: true },
+    { href: "https://www.instagram.com/_sapp3rs_/", label: "Instagram", external: true },
   ];
 
   return (
@@ -66,8 +66,12 @@ export function Nav() {
           aria-label="Menu"
           aria-expanded={open}
         >
-          <span className={`h-px w-6 bg-foreground transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`} />
-          <span className={`h-px w-6 bg-foreground transition-transform ${open ? "-translate-y-[3px] -rotate-45" : ""}`} />
+          <span
+            className={`h-px w-6 bg-foreground transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`}
+          />
+          <span
+            className={`h-px w-6 bg-foreground transition-transform ${open ? "-translate-y-[3px] -rotate-45" : ""}`}
+          />
         </button>
       </nav>
 

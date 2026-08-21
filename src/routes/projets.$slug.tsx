@@ -31,7 +31,9 @@ export const Route = createFileRoute("/projets/$slug")({
   notFoundComponent: () => (
     <div className="mx-auto max-w-xl px-6 py-32 text-center">
       <h1 className="font-display text-4xl">Projet introuvable</h1>
-      <Link to="/" className="mt-6 inline-block text-primary">← Retour aux projets</Link>
+      <Link to="/" className="mt-6 inline-block text-primary">
+        ← Retour aux projets
+      </Link>
     </div>
   ),
 });
@@ -40,9 +42,7 @@ function ProjectPage() {
   const { project } = Route.useLoaderData();
 
   const images =
-    project.heroImages && project.heroImages.length > 0
-      ? project.heroImages
-      : [project.cover];
+    project.heroImages && project.heroImages.length > 0 ? project.heroImages : [project.cover];
 
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -60,42 +60,70 @@ function ProjectPage() {
 
   return (
     <main className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32">
-      <Link to="/" className="text-xs uppercase tracking-[0.3em] text-muted-foreground hover:text-primary">← Retour</Link>
+      <Link
+        to="/"
+        className="text-xs uppercase tracking-[0.3em] text-muted-foreground hover:text-primary"
+      >
+        ← Retour
+      </Link>
       <p className="mt-10 text-xs uppercase tracking-[0.3em] text-primary">{project.category}</p>
       <h1 className="font-display mt-4 text-5xl leading-none md:text-8xl">{project.title}</h1>
       <div className="relative mt-12 aspect-[16/10] w-full overflow-hidden rounded-md">
-  {images.map((image, index) => (
-    <img
-      key={image}
-      src={image}
-      alt={`${project.title} — image ${index + 1}`}
-      className={`absolute inset-0 h-full w-full object-cover transition-all ease-linear ${
-        index === currentImage
-          ? "scale-105 opacity-100 duration-[6000ms]"
-          : "scale-100 opacity-0 duration-[1800ms]"
-      }`}
-    />
-  ))}
-</div>
+        {images.map((image, index) => (
+          <img
+            key={image}
+            src={image}
+            alt={`${project.title} — image ${index + 1}`}
+            className={`absolute inset-0 h-full w-full object-cover transition-all ease-linear ${
+              index === currentImage
+                ? "scale-105 opacity-100 duration-[6000ms]"
+                : "scale-100 opacity-0 duration-[1800ms]"
+            }`}
+          />
+        ))}
+      </div>
       <div className="mt-16 grid gap-12 md:grid-cols-12 md:gap-16">
         <dl className="md:col-span-4 space-y-6 text-sm">
-          <div><dt className="text-muted-foreground">Client</dt><dd>{project.client}</dd></div>
-          <div><dt className="text-muted-foreground">Livrables</dt><dd>{project.deliverables.join(" · ")}</dd></div>
+          <div>
+            <dt className="text-muted-foreground">Client</dt>
+            <dd>{project.client}</dd>
+          </div>
+          <div>
+            <dt className="text-muted-foreground">Livrables</dt>
+            <dd>{project.deliverables.join(" · ")}</dd>
+          </div>
         </dl>
         <div className="md:col-span-8 space-y-8 text-lg">
-          <div><p className="mb-2 text-xs uppercase tracking-[0.3em] text-primary">Contexte</p><p>{project.context}</p></div>
-          <div><p className="mb-2 text-xs uppercase tracking-[0.3em] text-primary">Réponse</p><p>{project.response}</p></div>
-          <div><p className="mb-2 text-xs uppercase tracking-[0.3em] text-primary">Résultat</p><p>{project.result}</p></div>
+          <div>
+            <p className="mb-2 text-xs uppercase tracking-[0.3em] text-primary">Contexte</p>
+            <p>{project.context}</p>
+          </div>
+          <div>
+            <p className="mb-2 text-xs uppercase tracking-[0.3em] text-primary">Réponse</p>
+            <p>{project.response}</p>
+          </div>
+          <div>
+            <p className="mb-2 text-xs uppercase tracking-[0.3em] text-primary">Résultat</p>
+            <p>{project.result}</p>
+          </div>
         </div>
       </div>
       <div className="mt-24 border-t border-border pt-12">
         <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Autres projets</p>
         <div className="mt-6 flex flex-wrap gap-4">
-          {projects.filter((p) => p.slug !== project.slug).slice(0, 3).map((p) => (
-            <Link key={p.slug} to="/projets/$slug" params={{ slug: p.slug }} className="text-sm text-foreground/80 hover:text-primary">
-              {p.title} →
-            </Link>
-          ))}
+          {projects
+            .filter((p) => p.slug !== project.slug)
+            .slice(0, 3)
+            .map((p) => (
+              <Link
+                key={p.slug}
+                to="/projets/$slug"
+                params={{ slug: p.slug }}
+                className="text-sm text-foreground/80 hover:text-primary"
+              >
+                {p.title} →
+              </Link>
+            ))}
         </div>
       </div>
     </main>
