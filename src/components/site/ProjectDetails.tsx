@@ -33,7 +33,7 @@ export function ProjectDetails({ project }: { project: Project }) {
 function ContentBlock({ label, text }: { label: string; text: string }) {
   return (
     <div>
-      <p className="mb-3 text-xs uppercase tracking-[0.3em] text-primary">{label}</p>
+      <h2 className="mb-3 text-xs font-normal uppercase tracking-[0.3em] text-primary">{label}</h2>
 
       <p className="text-lg leading-relaxed text-foreground/90 md:text-xl">{text}</p>
     </div>

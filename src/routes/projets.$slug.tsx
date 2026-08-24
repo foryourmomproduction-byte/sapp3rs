@@ -95,15 +95,21 @@ function ProjectPage() {
         </dl>
         <div className="md:col-span-8 space-y-8 text-lg">
           <div>
-            <p className="mb-2 text-xs uppercase tracking-[0.3em] text-primary">Contexte</p>
+            <h2 className="mb-2 text-xs font-normal uppercase tracking-[0.3em] text-primary">
+              Contexte
+            </h2>
             <p>{project.context}</p>
           </div>
           <div>
-            <p className="mb-2 text-xs uppercase tracking-[0.3em] text-primary">Réponse</p>
+            <h2 className="mb-2 text-xs font-normal uppercase tracking-[0.3em] text-primary">
+              Réponse
+            </h2>
             <p>{project.response}</p>
           </div>
           <div>
-            <p className="mb-2 text-xs uppercase tracking-[0.3em] text-primary">Résultat</p>
+            <h2 className="mb-2 text-xs font-normal uppercase tracking-[0.3em] text-primary">
+              Résultat
+            </h2>
             <p>{project.result}</p>
           </div>
         </div>
