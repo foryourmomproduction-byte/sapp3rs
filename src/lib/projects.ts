@@ -92,6 +92,109 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "antoine-malecot-broken-race",
+    title: "BROKEN RACE",
+    client: "Antoine Malecot",
+    category: "Photographie sportive • Réels Instagram",
+    cover: brokenRace5,
+
+    media: [
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/antoine_malecot/reel/DdJyYFxNueU/",
+        thumbnail: brokenRace5,
+        title: "Dream Big — ouverture de la série",
+      },
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/antoine_malecot/reel/Dd6zLQxtx4V/",
+        thumbnail: brokenRace1,
+        title: "Broken Race — épisode 1",
+      },
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/antoine_malecot/reel/DelQz7LtqbB/",
+        thumbnail: brokenRace2,
+        title: "Broken Race — épisode 2",
+      },
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/antoine_malecot/reel/DezaeAetVr_/",
+        thumbnail: brokenRace3,
+        title: "Broken Race — épisode 5, le départ",
+      },
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/antoine_malecot/reel/DfC6VoGNqJY/",
+        thumbnail: brokenRace4,
+        title: "Broken Race — épisode 3",
+      },
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/antoine_malecot/reel/DfITgqTNRNl/",
+        thumbnail: brokenRace5,
+        title: "Broken Race — épisode 4, la finale",
+      },
+      { type: "image", src: brokenRace1, alt: "Le groupe se rassemble avant le départ" },
+      { type: "image", src: brokenRace2, alt: "Un moment de soutien entre participants" },
+      { type: "image", src: brokenRace3, alt: "Un coureur équipé de sa lampe frontale" },
+      { type: "image", src: brokenRace4, alt: "Détail des chaussures sur le terrain" },
+      {
+        type: "image",
+        src: brokenRace5,
+        alt: "Un coureur avance dans la nuit, lampe frontale allumée",
+      },
+    ],
+
+    context:
+      "À l’occasion de la Broken Race, Antoine Malecot a pris part à une aventure sportive et solidaire au profit de l’association Les Étoiles de Gaby. Le projet suit cette expérience sur le terrain, de l’élan initial au départ, puis jusqu’à la finale, en mêlant effort, esprit d’équipe et moments de partage.",
+
+    response:
+      "J’ai réalisé un reportage photo pendant la compétition et accompagné le récit du projet avec une série de six réels Instagram en collaboration avec Antoine. Les vidéos — Dream Big, épisodes 1, 2, 5 (le départ), 3 et 4 (la finale) — retracent les temps forts de l’aventure dans l’ordre souhaité, avec des visuels conçus pour renvoyer directement vers Instagram.",
+
+    result:
+      "Un récit photo et vidéo qui restitue l’intensité de la course et la dimension collective de l’événement. Les cinq photographies sélectionnées forment une banque d’images complémentaire aux six réels publiés sur Instagram.",
+
+    deliverables: ["Photographie sportive", "Banque d’images", "6 réels Instagram"],
+  },
+
+  {
+    slug: "simon-delsalle",
+    title: "SIMON DELSALLE",
+    client: "Simon Delsalle",
+    category: "Photographie sportive • Reel Instagram",
+    cover: simonDelsalle,
+    mediaAspect: "portrait",
+
+    media: [
+      {
+        type: "video",
+        src: "/videos/simon-delsalle-reel.mp4",
+        poster: simonDelsalle,
+        title: "Simon Delsalle — Reel Instagram",
+        autoPlay: false,
+        preload: "none",
+      },
+      { type: "image", src: simonDelsalle5, fit: "contain" },
+      { type: "image", src: simonDelsalle7, fit: "contain" },
+      { type: "image", src: simonDelsalle13, fit: "contain" },
+      { type: "image", src: simonDelsalle24, fit: "contain" },
+      { type: "image", src: simonDelsalle45, fit: "contain" },
+    ],
+
+    context:
+      "Le projet s'est déroulé dans une salle de sport, au plus près de l'entraînement de Simon Delsalle. La séance associe une série de photographies sportives à la réalisation d'un reel court destiné à Instagram. Les images montrent les exercices, les gestes et l'ambiance de la salle, pour constituer une banque de contenus photo et vidéo cohérente autour de son univers sportif.",
+
+    response:
+      "J'ai réalisé les images de la séance, sélectionné les photos finales et monté un reel vertical à partir des séquences vidéo. La galerie présente le reel en premier, suivi des cinq photographies du livrable.",
+
+    result:
+      "Un ensemble de contenus prêt à alimenter la communication de Simon, avec une banque d'images sportives et un format vidéo court pensé pour Instagram.",
+
+    deliverables: ["Photographie sportive", "Banque d’images", "Réel Instagram"],
+  },
+
+  {
     slug: "madyard",
     title: "MAD'YARD",
     client: "MAD'YARD",
@@ -289,109 +392,6 @@ export const projects: Project[] = [
       "Contenu documentaire",
       "Création de contenus sociaux",
     ],
-  },
-
-  {
-    slug: "antoine-malecot-broken-race",
-    title: "BROKEN RACE",
-    client: "Antoine Malécot",
-    category: "Photographie sportive • Réels Instagram",
-    cover: brokenRace5,
-
-    media: [
-      {
-        type: "instagram-link",
-        src: "https://www.instagram.com/antoine_malecot/reel/DdJyYFxNueU/",
-        thumbnail: brokenRace5,
-        title: "Dream Big — ouverture de la série",
-      },
-      {
-        type: "instagram-link",
-        src: "https://www.instagram.com/antoine_malecot/reel/Dd6zLQxtx4V/",
-        thumbnail: brokenRace1,
-        title: "Broken Race — épisode 1",
-      },
-      {
-        type: "instagram-link",
-        src: "https://www.instagram.com/antoine_malecot/reel/DelQz7LtqbB/",
-        thumbnail: brokenRace2,
-        title: "Broken Race — épisode 2",
-      },
-      {
-        type: "instagram-link",
-        src: "https://www.instagram.com/antoine_malecot/reel/DezaeAetVr_/",
-        thumbnail: brokenRace3,
-        title: "Broken Race — épisode 5, le départ",
-      },
-      {
-        type: "instagram-link",
-        src: "https://www.instagram.com/antoine_malecot/reel/DfC6VoGNqJY/",
-        thumbnail: brokenRace4,
-        title: "Broken Race — épisode 3",
-      },
-      {
-        type: "instagram-link",
-        src: "https://www.instagram.com/antoine_malecot/reel/DfITgqTNRNl/",
-        thumbnail: brokenRace5,
-        title: "Broken Race — épisode 4, la finale",
-      },
-      { type: "image", src: brokenRace1, alt: "Le groupe se rassemble avant le départ" },
-      { type: "image", src: brokenRace2, alt: "Un moment de soutien entre participants" },
-      { type: "image", src: brokenRace3, alt: "Un coureur équipé de sa lampe frontale" },
-      { type: "image", src: brokenRace4, alt: "Détail des chaussures sur le terrain" },
-      {
-        type: "image",
-        src: brokenRace5,
-        alt: "Un coureur avance dans la nuit, lampe frontale allumée",
-      },
-    ],
-
-    context:
-      "À l’occasion de la Broken Race, Antoine Malécot a pris part à une aventure sportive et solidaire au profit de l’association Les Étoiles de Gaby. Le projet suit cette expérience sur le terrain, de l’élan initial au départ, puis jusqu’à la finale, en mêlant effort, esprit d’équipe et moments de partage.",
-
-    response:
-      "J’ai réalisé un reportage photo pendant la compétition et accompagné le récit du projet avec une série de six réels Instagram en collaboration avec Antoine. Les vidéos — Dream Big, épisodes 1, 2, 5 (le départ), 3 et 4 (la finale) — retracent les temps forts de l’aventure dans l’ordre souhaité, avec des visuels conçus pour renvoyer directement vers Instagram.",
-
-    result:
-      "Un récit photo et vidéo qui restitue l’intensité de la course et la dimension collective de l’événement. Les cinq photographies sélectionnées forment une banque d’images complémentaire aux six réels publiés sur Instagram.",
-
-    deliverables: ["Photographie sportive", "Banque d’images", "6 réels Instagram"],
-  },
-
-  {
-    slug: "simon-delsalle",
-    title: "SIMON DELSALLE",
-    client: "Simon Delsalle",
-    category: "Photographie sportive • Reel Instagram",
-    cover: simonDelsalle,
-    mediaAspect: "portrait",
-
-    media: [
-      {
-        type: "video",
-        src: "/videos/simon-delsalle-reel.mp4",
-        poster: simonDelsalle,
-        title: "Simon Delsalle — Reel Instagram",
-        autoPlay: false,
-        preload: "none",
-      },
-      { type: "image", src: simonDelsalle5, fit: "contain" },
-      { type: "image", src: simonDelsalle7, fit: "contain" },
-      { type: "image", src: simonDelsalle13, fit: "contain" },
-      { type: "image", src: simonDelsalle24, fit: "contain" },
-      { type: "image", src: simonDelsalle45, fit: "contain" },
-    ],
-
-    context:
-      "Le projet s'est déroulé dans une salle de sport, au plus près de l'entraînement de Simon Delsalle. La séance associe une série de photographies sportives à la réalisation d'un reel court destiné à Instagram. Les images montrent les exercices, les gestes et l'ambiance de la salle, pour constituer une banque de contenus photo et vidéo cohérente autour de son univers sportif.",
-
-    response:
-      "J'ai réalisé les images de la séance, sélectionné les photos finales et monté un reel vertical à partir des séquences vidéo. La galerie présente le reel en premier, suivi des cinq photographies du livrable.",
-
-    result:
-      "Un ensemble de contenus prêt à alimenter la communication de Simon, avec une banque d'images sportives et un format vidéo court pensé pour Instagram.",
-
-    deliverables: ["Photographie sportive", "Banque d’images", "Réel Instagram"],
   },
 
   {
