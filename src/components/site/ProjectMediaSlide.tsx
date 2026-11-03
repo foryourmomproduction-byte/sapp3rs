@@ -98,11 +98,11 @@ export function ProjectMediaSlide({
           src={item.src}
           poster={item.poster}
           muted
-          autoPlay={isActive}
+          autoPlay={item.autoPlay ?? isActive}
           loop
           playsInline
           {...(!isBorn4More && { controls: true })}
-          preload="metadata"
+          preload={item.preload ?? "metadata"}
           aria-label={`${project.title} — vidéo ${index + 1}`}
           className="h-full w-full bg-black object-contain"
         />

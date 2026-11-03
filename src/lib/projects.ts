@@ -3,6 +3,7 @@ const olicrom = "/assets/optimized/project-olicrom.jpg";
 const born4more = "/assets/optimized/project-born4more.jpg";
 const smart = "/assets/optimized/project-smart.jpg";
 const fitnesspark = "/assets/optimized/project-fitnesspark.jpg";
+const simonDelsalle = "/assets/optimized/projects/simon-delsalle/7.jpg";
 const takeControlThumbnail =
   "/assets/optimized/projects/take-control/vlog-thumbnail.jpg";
 
@@ -37,6 +38,12 @@ const fitnesspark3 =
   "/assets/optimized/projects/fitness-park/fitnesspark-3.jpg";
 const fitnesspark4 =
   "/assets/optimized/projects/fitness-park/fitnesspark-4.jpg";
+
+const simonDelsalle5 = "/assets/optimized/projects/simon-delsalle/5.jpg";
+const simonDelsalle7 = "/assets/optimized/projects/simon-delsalle/7.jpg";
+const simonDelsalle13 = "/assets/optimized/projects/simon-delsalle/13.jpg";
+const simonDelsalle24 = "/assets/optimized/projects/simon-delsalle/24.jpg";
+const simonDelsalle45 = "/assets/optimized/projects/simon-delsalle/45.jpg";
 
 const jamesDocumentaryCover =
   "/assets/optimized/projects/james-documentary/james-documentary-cover.jpg";
@@ -76,6 +83,8 @@ export type ProjectMedia = {
   src: string;
   alt?: string;
   poster?: string;
+  autoPlay?: boolean;
+  preload?: "none" | "metadata" | "auto";
   title?: string;
   thumbnail?: string;
   fit?: "cover" | "contain";
@@ -310,6 +319,41 @@ export const projects: Project[] = [
       "Contenu documentaire",
       "Création de contenus sociaux",
     ],
+  },
+
+  {
+    slug: "simon-delsalle",
+    title: "SIMON DELSALLE",
+    client: "Simon Delsalle",
+    category: "Photographie sportive • Vidéo",
+    cover: simonDelsalle,
+
+    media: [
+      { type: "image", src: simonDelsalle5 },
+      { type: "image", src: simonDelsalle7 },
+      { type: "image", src: simonDelsalle13 },
+      { type: "image", src: simonDelsalle24 },
+      { type: "image", src: simonDelsalle45 },
+      {
+        type: "video",
+        src: "/videos/simon-delsalle-reel.mp4",
+        poster: simonDelsalle,
+        title: "Simon Delsalle — Reel Instagram",
+        autoPlay: false,
+        preload: "none",
+      },
+    ],
+
+    context:
+      "Une séance photo sportive en salle, consacrée à l'entraînement de Simon Delsalle.",
+
+    response:
+      "Une sélection de cinq images du livrable final, accompagnée du reel réalisé pour Instagram.",
+
+    result:
+      "Une galerie courte qui rassemble les photos et le format vidéo du projet.",
+
+    deliverables: ["Photographie sportive", "Sélection de 5 images", "Reel Instagram"],
   },
 
   {
