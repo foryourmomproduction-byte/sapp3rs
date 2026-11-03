@@ -175,6 +175,12 @@ function ExternalMediaCard({
             ▶
           </span>
 
+          {item.title && (
+            <span className="rounded-full bg-black/70 px-5 py-2 text-sm font-medium text-white backdrop-blur-md">
+              {item.title}
+            </span>
+          )}
+
           <span className="rounded-full bg-black/70 px-5 py-3 text-sm text-white backdrop-blur-md">
             Regarder sur {platform}
           </span>

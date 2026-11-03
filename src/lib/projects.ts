@@ -4,8 +4,7 @@ const born4more = "/assets/optimized/project-born4more.jpg";
 const smart = "/assets/optimized/project-smart.jpg";
 const fitnesspark = "/assets/optimized/project-fitnesspark.jpg";
 const simonDelsalle = "/assets/optimized/projects/simon-delsalle/7.jpg";
-const takeControlThumbnail =
-  "/assets/optimized/projects/take-control/vlog-thumbnail.jpg";
+const takeControlThumbnail = "/assets/optimized/projects/take-control/vlog-thumbnail.jpg";
 
 const madyard1 = "/assets/optimized/projects/madyard/1.jpg";
 const madyard2 = "/assets/optimized/projects/madyard/2.jpg";
@@ -18,26 +17,19 @@ const olicrom2 = "/assets/optimized/projects/olicrom/2.jpg";
 const olicrom3 = "/assets/optimized/projects/olicrom/3.jpg";
 const olicrom4 = "/assets/optimized/projects/olicrom/4.jpg";
 
-const smartTalks1 =
-  "/assets/optimized/projects/smart-investment/smart-talks-1.jpg";
-const smartTalks2 =
-  "/assets/optimized/projects/smart-investment/smart-talks-2.jpg";
-const smartTalks3 =
-  "/assets/optimized/projects/smart-investment/smart-talks-3.jpg";
+const smartTalks1 = "/assets/optimized/projects/smart-investment/smart-talks-1.jpg";
+const smartTalks2 = "/assets/optimized/projects/smart-investment/smart-talks-2.jpg";
+const smartTalks3 = "/assets/optimized/projects/smart-investment/smart-talks-3.jpg";
 
 const born4more2 = "/assets/optimized/projects/born4more/born4more-2.jpg";
 const born4more3 = "/assets/optimized/projects/born4more/born4more-3.jpg";
 const born4more4 = "/assets/optimized/projects/born4more/born4more-4.jpg";
 const born4more5 = "/assets/optimized/projects/born4more/born4more-5.jpg";
 
-const fitnesspark1 =
-  "/assets/optimized/projects/fitness-park/fitnesspark-1.jpg";
-const fitnesspark2 =
-  "/assets/optimized/projects/fitness-park/fitnesspark-2.jpg";
-const fitnesspark3 =
-  "/assets/optimized/projects/fitness-park/fitnesspark-3.jpg";
-const fitnesspark4 =
-  "/assets/optimized/projects/fitness-park/fitnesspark-4.jpg";
+const fitnesspark1 = "/assets/optimized/projects/fitness-park/fitnesspark-1.jpg";
+const fitnesspark2 = "/assets/optimized/projects/fitness-park/fitnesspark-2.jpg";
+const fitnesspark3 = "/assets/optimized/projects/fitness-park/fitnesspark-3.jpg";
+const fitnesspark4 = "/assets/optimized/projects/fitness-park/fitnesspark-4.jpg";
 
 const simonDelsalle5 = "/assets/optimized/projects/simon-delsalle/5.jpg";
 const simonDelsalle7 = "/assets/optimized/projects/simon-delsalle/7.jpg";
@@ -45,24 +37,23 @@ const simonDelsalle13 = "/assets/optimized/projects/simon-delsalle/13.jpg";
 const simonDelsalle24 = "/assets/optimized/projects/simon-delsalle/24.jpg";
 const simonDelsalle45 = "/assets/optimized/projects/simon-delsalle/45.jpg";
 
+const brokenRace1 = "/assets/optimized/projects/broken-race/1.jpg";
+const brokenRace2 = "/assets/optimized/projects/broken-race/2.jpg";
+const brokenRace3 = "/assets/optimized/projects/broken-race/3.jpg";
+const brokenRace4 = "/assets/optimized/projects/broken-race/4.jpg";
+const brokenRace5 = "/assets/optimized/projects/broken-race/5.jpg";
+
 const jamesDocumentaryCover =
   "/assets/optimized/projects/james-documentary/james-documentary-cover.jpg";
-const missionRun1 =
-  "/assets/optimized/projects/james-documentary/mission-run-1.jpg";
-const missionRun2 =
-  "/assets/optimized/projects/james-documentary/mission-run-2.jpg";
-const missionRun3 =
-  "/assets/optimized/projects/james-documentary/mission-run-3.jpg";
-const missionRun4 =
-  "/assets/optimized/projects/james-documentary/mission-run-4.jpg";
-const missionRun5 =
-  "/assets/optimized/projects/james-documentary/mission-run-5.jpg";
+const missionRun1 = "/assets/optimized/projects/james-documentary/mission-run-1.jpg";
+const missionRun2 = "/assets/optimized/projects/james-documentary/mission-run-2.jpg";
+const missionRun3 = "/assets/optimized/projects/james-documentary/mission-run-3.jpg";
+const missionRun4 = "/assets/optimized/projects/james-documentary/mission-run-4.jpg";
+const missionRun5 = "/assets/optimized/projects/james-documentary/mission-run-5.jpg";
 
-const olicromThumbnail =
-  "/assets/optimized/projects/olicrom/olicrom-thumbnail.jpg";
+const olicromThumbnail = "/assets/optimized/projects/olicrom/olicrom-thumbnail.jpg";
 
-const fourvierePanorama =
-  "/assets/optimized/projects/fourviere-panorama/fourviere-panorama.jpg";
+const fourvierePanorama = "/assets/optimized/projects/fourviere-panorama/fourviere-panorama.jpg";
 
 const reunionCover = "/assets/optimized/projects/reunion/reunion-cover.jpg";
 const reunion1 = "/assets/optimized/projects/reunion/reunion-1.jpg";
@@ -73,13 +64,7 @@ const reunion5 = "/assets/optimized/projects/reunion/reunion-5.jpg";
 const reunion6 = "/assets/optimized/projects/reunion/reunion-6.jpg";
 
 export type ProjectMedia = {
-  type:
-    | "image"
-    | "video"
-    | "youtube"
-    | "youtube-link"
-    | "instagram"
-    | "instagram-link";
+  type: "image" | "video" | "youtube" | "youtube-link" | "instagram" | "instagram-link";
   src: string;
   alt?: string;
   poster?: string;
@@ -124,11 +109,7 @@ export const projects: Project[] = [
     result:
       "Une banque d'images propriétaire, utilisable sur l'ensemble des supports de communication et pour promouvoir les éditions à venir.",
 
-    deliverables: [
-      "Couverture événementielle",
-      "Banque d'images",
-      "Contenus réseaux sociaux",
-    ],
+    deliverables: ["Couverture événementielle", "Banque d'images", "Contenus réseaux sociaux"],
   },
 
   {
@@ -172,11 +153,7 @@ export const projects: Project[] = [
     result:
       "Le projet a permis à Olicrom de disposer d'une vidéo de cas client ainsi que d'une bibliothèque de photographies et de vidéos réutilisables sur son site internet, ses réseaux sociaux et lors d'événements professionnels comme le salon FIBO, renforçant ainsi la crédibilité de la marque auprès de ses futurs clients.",
 
-    deliverables: [
-      "Film promotionnel",
-      "Photographies",
-      "Contenus réseaux sociaux",
-    ],
+    deliverables: ["Film promotionnel", "Photographies", "Contenus réseaux sociaux"],
   },
 
   {
@@ -224,11 +201,7 @@ export const projects: Project[] = [
     result:
       "Une présence plus régulière sur Instagram et YouTube, accompagnée d'une progression du nombre de vues et d'abonnés. Le travail de storytelling et de rythme, notamment sur les formats vlog, a permis de rendre les contenus plus captivants et de maintenir l'attention de l'audience.",
 
-    deliverables: [
-      "Réels Instagram",
-      "Vlog YouTube",
-      "Contenus face caméra",
-    ],
+    deliverables: ["Réels Instagram", "Vlog YouTube", "Contenus face caméra"],
   },
 
   {
@@ -268,11 +241,7 @@ export const projects: Project[] = [
     result:
       "Une production régulière et structurée, avec des épisodes captés dans des conditions professionnelles et une identité visuelle cohérente sur YouTube et les réseaux sociaux.",
 
-    deliverables: [
-      "Production podcast",
-      "Captation des épisodes",
-      "Miniatures & contenus sociaux",
-    ],
+    deliverables: ["Production podcast", "Captation des épisodes", "Miniatures & contenus sociaux"],
   },
 
   {
@@ -320,6 +289,73 @@ export const projects: Project[] = [
       "Contenu documentaire",
       "Création de contenus sociaux",
     ],
+  },
+
+  {
+    slug: "antoine-malecot-broken-race",
+    title: "BROKEN RACE",
+    client: "Antoine Malécot",
+    category: "Photographie sportive • Réels Instagram",
+    cover: brokenRace5,
+
+    media: [
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/antoine_malecot/reel/DdJyYFxNueU/",
+        thumbnail: brokenRace5,
+        title: "Dream Big — ouverture de la série",
+      },
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/antoine_malecot/reel/Dd6zLQxtx4V/",
+        thumbnail: brokenRace1,
+        title: "Broken Race — épisode 1",
+      },
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/antoine_malecot/reel/DelQz7LtqbB/",
+        thumbnail: brokenRace2,
+        title: "Broken Race — épisode 2",
+      },
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/antoine_malecot/reel/DezaeAetVr_/",
+        thumbnail: brokenRace3,
+        title: "Broken Race — épisode 5, le départ",
+      },
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/antoine_malecot/reel/DfC6VoGNqJY/",
+        thumbnail: brokenRace4,
+        title: "Broken Race — épisode 3",
+      },
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/antoine_malecot/reel/DfITgqTNRNl/",
+        thumbnail: brokenRace5,
+        title: "Broken Race — épisode 4, la finale",
+      },
+      { type: "image", src: brokenRace1, alt: "Le groupe se rassemble avant le départ" },
+      { type: "image", src: brokenRace2, alt: "Un moment de soutien entre participants" },
+      { type: "image", src: brokenRace3, alt: "Un coureur équipé de sa lampe frontale" },
+      { type: "image", src: brokenRace4, alt: "Détail des chaussures sur le terrain" },
+      {
+        type: "image",
+        src: brokenRace5,
+        alt: "Un coureur avance dans la nuit, lampe frontale allumée",
+      },
+    ],
+
+    context:
+      "À l’occasion de la Broken Race, Antoine Malécot a pris part à une aventure sportive et solidaire au profit de l’association Les Étoiles de Gaby. Le projet suit cette expérience sur le terrain, de l’élan initial au départ, puis jusqu’à la finale, en mêlant effort, esprit d’équipe et moments de partage.",
+
+    response:
+      "J’ai réalisé un reportage photo pendant la compétition et accompagné le récit du projet avec une série de six réels Instagram en collaboration avec Antoine. Les vidéos — Dream Big, épisodes 1, 2, 5 (le départ), 3 et 4 (la finale) — retracent les temps forts de l’aventure dans l’ordre souhaité, avec des visuels conçus pour renvoyer directement vers Instagram.",
+
+    result:
+      "Un récit photo et vidéo qui restitue l’intensité de la course et la dimension collective de l’événement. Les cinq photographies sélectionnées forment une banque d’images complémentaire aux six réels publiés sur Instagram.",
+
+    deliverables: ["Photographie sportive", "Banque d’images", "6 réels Instagram"],
   },
 
   {
@@ -406,11 +442,7 @@ export const projects: Project[] = [
     result:
       "Une série de contenus permettant de valoriser la nouvelle identité de Fitness Park Tignieu, avec une vidéo Instagram ayant généré plus de 70 000 vues.",
 
-    deliverables: [
-      "Photographies équipements",
-      "Contenus Instagram",
-      "Production vidéo",
-    ],
+    deliverables: ["Photographies équipements", "Contenus Instagram", "Production vidéo"],
   },
 ];
 
@@ -470,12 +502,7 @@ export const exclusiveProjects: Project[] = [
     result:
       "Un film documentaire conçu comme une véritable pièce éditoriale, permettant de raconter l'expérience de James Chaix à travers une approche immersive et personnelle.",
 
-    deliverables: [
-      "Réalisation documentaire",
-      "Montage",
-      "Sound design",
-      "Étalonnage",
-    ],
+    deliverables: ["Réalisation documentaire", "Montage", "Sound design", "Étalonnage"],
   },
 
   {
@@ -566,11 +593,7 @@ export const exclusiveProjects: Project[] = [
     result:
       "Une série d'images pensée comme un carnet visuel de La Réunion, mêlant paysages, immersion et moments capturés au fil du voyage.",
 
-    deliverables: [
-      "Série photographique",
-      "Photographie de paysage",
-      "Création personnelle",
-    ],
+    deliverables: ["Série photographique", "Photographie de paysage", "Création personnelle"],
   },
 ];
 
