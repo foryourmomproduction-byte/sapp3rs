@@ -140,7 +140,10 @@ export function ProjectOverlay({ project, onClose }: ProjectOverlayProps) {
         return;
       }
 
-      const isActiveVideo = index === currentMediaIndex && media[index]?.type === "video";
+      const isActiveVideo =
+        index === currentMediaIndex &&
+        media[index]?.type === "video" &&
+        media[index]?.autoPlay !== false;
 
       video.muted = true;
 

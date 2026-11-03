@@ -96,6 +96,7 @@ export type Project = {
   client: string;
   category: string;
   cover: string;
+  mediaAspect?: "landscape" | "portrait";
   heroImages?: string[];
   media?: ProjectMedia[];
   context: string;
@@ -325,15 +326,11 @@ export const projects: Project[] = [
     slug: "simon-delsalle",
     title: "SIMON DELSALLE",
     client: "Simon Delsalle",
-    category: "Photographie sportive • Vidéo",
+    category: "Photographie sportive • Reel Instagram",
     cover: simonDelsalle,
+    mediaAspect: "portrait",
 
     media: [
-      { type: "image", src: simonDelsalle5 },
-      { type: "image", src: simonDelsalle7 },
-      { type: "image", src: simonDelsalle13 },
-      { type: "image", src: simonDelsalle24 },
-      { type: "image", src: simonDelsalle45 },
       {
         type: "video",
         src: "/videos/simon-delsalle-reel.mp4",
@@ -342,18 +339,23 @@ export const projects: Project[] = [
         autoPlay: false,
         preload: "none",
       },
+      { type: "image", src: simonDelsalle5, fit: "contain" },
+      { type: "image", src: simonDelsalle7, fit: "contain" },
+      { type: "image", src: simonDelsalle13, fit: "contain" },
+      { type: "image", src: simonDelsalle24, fit: "contain" },
+      { type: "image", src: simonDelsalle45, fit: "contain" },
     ],
 
     context:
-      "Une séance photo sportive en salle, consacrée à l'entraînement de Simon Delsalle.",
+      "Le projet s'est déroulé dans une salle de sport, au plus près de l'entraînement de Simon Delsalle. La séance associe une série de photographies sportives à la réalisation d'un reel court destiné à Instagram. Les images montrent les exercices, les gestes et l'ambiance de la salle, pour constituer une banque de contenus photo et vidéo cohérente autour de son univers sportif.",
 
     response:
-      "Une sélection de cinq images du livrable final, accompagnée du reel réalisé pour Instagram.",
+      "J'ai réalisé les images de la séance, sélectionné les photos finales et monté un reel vertical à partir des séquences vidéo. La galerie présente le reel en premier, suivi des cinq photographies du livrable.",
 
     result:
-      "Une galerie courte qui rassemble les photos et le format vidéo du projet.",
+      "Un ensemble de contenus prêt à alimenter la communication de Simon, avec une banque d'images sportives et un format vidéo court pensé pour Instagram.",
 
-    deliverables: ["Photographie sportive", "Sélection de 5 images", "Reel Instagram"],
+    deliverables: ["Photographie sportive", "Banque d’images", "Réel Instagram"],
   },
 
   {

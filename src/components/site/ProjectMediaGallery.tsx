@@ -58,7 +58,11 @@ export function ProjectMediaGallery({
 
   return (
     <div
-      className="relative mt-16 aspect-[16/10] w-full touch-pan-y overflow-hidden rounded-md bg-black"
+      className={`relative mx-auto mt-16 w-full touch-pan-y overflow-hidden rounded-md bg-black ${
+        project.mediaAspect === "portrait"
+          ? "aspect-[9/16] max-w-[420px]"
+          : "aspect-[16/10]"
+      }`}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
