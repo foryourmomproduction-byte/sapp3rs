@@ -63,6 +63,12 @@ const reunion4 = "/assets/optimized/projects/reunion/reunion-4.jpg";
 const reunion5 = "/assets/optimized/projects/reunion/reunion-5.jpg";
 const reunion6 = "/assets/optimized/projects/reunion/reunion-6.jpg";
 
+const tatianaCover = "/assets/optimized/projects/utmb-nice-tatiana/nice-100m-start-area.jpg";
+const tatianaCourse = "/assets/optimized/projects/utmb-nice-tatiana/tatiana-course.jpg";
+const tatianaPortrait = "/assets/optimized/projects/utmb-nice-tatiana/tatiana-portrait.jpg";
+const tatianaCourseMoment = "/assets/optimized/projects/utmb-nice-tatiana/tatiana-course-moment.jpg";
+const tatianaArrivalArea = "/assets/optimized/projects/utmb-nice-tatiana/tatiana-arrival-area.jpg";
+
 export type ProjectMedia = {
   type: "image" | "video" | "youtube" | "youtube-link" | "instagram" | "instagram-link";
   src: string;
@@ -91,6 +97,27 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "nice-cote-dazur-by-utmb-tatiana",
+    title: "NICE CÔTE D’AZUR BY UTMB",
+    client: "Tatiana",
+    category: "Photographie sportive • Accréditation UTMB",
+    cover: tatianaCover,
+    media: [
+      { type: "image", src: tatianaCover, alt: "Tatiana au cœur de Nice Côte d’Azur by UTMB" },
+      { type: "image", src: tatianaCourse, alt: "Tatiana sur le parcours du 100M" },
+      { type: "image", src: tatianaPortrait, alt: "Portrait de Tatiana pendant la course" },
+      { type: "image", src: tatianaCourseMoment, alt: "Tatiana pendant sa traversée de l’UTMB Nice Côte d’Azur" },
+      { type: "image", src: tatianaArrivalArea, alt: "Un autre moment du parcours de Tatiana" },
+    ],
+    context:
+      "Accrédité par Nice Côte d’Azur by UTMB®, j’ai accompagné l’athlète Tatiana sur le format 100M. L’intention : raconter, à travers son expérience, la traversée de l’épreuve et ce qu’elle représente pour les femmes engagées sur cette distance.",
+    response:
+      "J’ai suivi Tatiana sur le terrain et réalisé une série de photographies au fil de son parcours. Ces images posent les bases d’un récit documentaire consacré à la course au féminin ; un reel viendra en proposer une version courte et immersive.",
+    result:
+      "Un reportage photo réalisé dans le cadre de mon accréditation UTMB, au plus près de l’expérience de Tatiana sur le 100M. Le reel documentaire sera ajouté au projet après sa publication.",
+    deliverables: ["Photographie sportive", "Accréditation UTMB", "Reel documentaire — à venir"],
+  },
   {
     slug: "antoine-malecot-broken-race",
     title: "BROKEN RACE",
