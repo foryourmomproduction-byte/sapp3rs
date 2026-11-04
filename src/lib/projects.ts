@@ -104,6 +104,12 @@ export const projects: Project[] = [
     category: "Photographie sportive • Accréditation UTMB",
     cover: tatianaCover,
     media: [
+      {
+        type: "instagram-link",
+        src: "https://www.instagram.com/p/DfU2291qRgi/",
+        thumbnail: tatianaCover,
+        title: "Reel documentaire — Tatiana, 100M UTMB",
+      },
       { type: "image", src: tatianaCover, alt: "Tatiana au cœur de Nice Côte d’Azur by UTMB" },
       { type: "image", src: tatianaCourse, alt: "Tatiana sur le parcours du 100M" },
       { type: "image", src: tatianaPortrait, alt: "Portrait de Tatiana pendant la course" },
@@ -113,10 +119,10 @@ export const projects: Project[] = [
     context:
       "Accrédité par Nice Côte d’Azur by UTMB®, j’ai accompagné l’athlète Tatiana sur le format 100M. L’intention : raconter, à travers son expérience, la traversée de l’épreuve et ce qu’elle représente pour les femmes engagées sur cette distance.",
     response:
-      "J’ai suivi Tatiana sur le terrain et réalisé une série de photographies au fil de son parcours. Ces images posent les bases d’un récit documentaire consacré à la course au féminin ; un reel viendra en proposer une version courte et immersive.",
+      "J’ai suivi Tatiana sur le terrain et réalisé une série de photographies au fil de son parcours. Ces images composent un récit documentaire consacré à la course au féminin, prolongé par un reel publié sur Instagram.",
     result:
-      "Un reportage photo réalisé dans le cadre de mon accréditation UTMB, au plus près de l’expérience de Tatiana sur le 100M. Le reel documentaire sera ajouté au projet après sa publication.",
-    deliverables: ["Photographie sportive", "Accréditation UTMB", "Reel documentaire — à venir"],
+      "Un reportage photo et un reel documentaire réalisés dans le cadre de mon accréditation UTMB, au plus près de l’expérience de Tatiana sur le 100M.",
+    deliverables: ["Photographie sportive", "Accréditation UTMB", "Reel Instagram"],
   },
   {
     slug: "antoine-malecot-broken-race",
