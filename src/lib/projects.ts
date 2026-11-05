@@ -631,6 +631,10 @@ export const exclusiveProjects: Project[] = [
 ];
 
 export const collaborations = [
+  "NICE CÔTE D’AZUR BY UTMB",
+  "BROKEN RACE",
+  "IMMERSIVE",
+  "BODYCROSS",
   "MAD'YARD",
   "ON AIR",
   "OLICROM",
