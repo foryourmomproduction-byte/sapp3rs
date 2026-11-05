@@ -69,6 +69,14 @@ const tatianaPortrait = "/assets/optimized/projects/utmb-nice-tatiana/tatiana-po
 const tatianaCourseMoment = "/assets/optimized/projects/utmb-nice-tatiana/tatiana-course-moment.jpg";
 const tatianaArrivalArea = "/assets/optimized/projects/utmb-nice-tatiana/tatiana-arrival-area.jpg";
 
+const immersiveCover = "/assets/optimized/projects/immersive/2.jpg";
+const immersive1 = "/assets/optimized/projects/immersive/1.jpg";
+const immersive2 = "/assets/optimized/projects/immersive/2.jpg";
+const immersive3 = "/assets/optimized/projects/immersive/3.jpg";
+const immersive4 = "/assets/optimized/projects/immersive/4.jpg";
+const immersive5 = "/assets/optimized/projects/immersive/5.jpg";
+const immersiveVideoPoster = "/assets/optimized/projects/immersive/video-poster.jpg";
+
 export type ProjectMedia = {
   type: "image" | "video" | "youtube" | "youtube-link" | "instagram" | "instagram-link";
   src: string;
@@ -124,6 +132,40 @@ export const projects: Project[] = [
       "Un reportage photo et un reel documentaire réalisés dans le cadre de mon accréditation UTMB, au plus près de l’expérience de Tatiana sur le 100M.",
     deliverables: ["Photographie sportive", "Accréditation UTMB", "Reel Instagram"],
   },
+  {
+    slug: "immersive",
+    title: "IMMERSIVE",
+    client: "Immersive",
+    category: "Photographie • Vidéo • Banque d’images",
+    cover: immersiveCover,
+    media: [
+      {
+        type: "video",
+        src: "/videos/immersive-free.mp4",
+        poster: immersiveVideoPoster,
+        title: "Immersive — L’Aiguille Verte",
+        autoPlay: false,
+        preload: "none",
+      },
+      { type: "image", src: immersive1, alt: "Une participante pendant l’immersion en montagne", fit: "contain" },
+      { type: "image", src: immersive2, alt: "Les participants progressent sur le sentier de montagne", fit: "contain" },
+      { type: "image", src: immersive3, alt: "Le groupe en randonnée sur un sentier alpin", fit: "contain" },
+      { type: "image", src: immersive4, alt: "Portrait d’une participante en montagne", fit: "contain" },
+      { type: "image", src: immersive5, alt: "Un autre moment de l’expérience Immersive", fit: "contain" },
+    ],
+
+    context:
+      "Pour le lancement d’Immersive, une expérience gratuite en montagne a été proposée à dix personnes. L’équipe souhaitait constituer une banque d’images photo et vidéo pour raconter l’expérience et faire découvrir les activités proposées.",
+
+    response:
+      "J’ai été sollicité comme photographe et filmmaker pour documenter l’expérience et créer cette banque de contenus. En complément, j’ai réalisé un reel vidéo autour des activités, avec notamment l’ascension de l’Aiguille Verte, en Haute-Savoie.",
+
+    result:
+      "Une banque d’images photo et vidéo destinée à la communication d’Immersive, complétée par un reel qui met en lumière les activités et l’expérience vécue en montagne.",
+
+    deliverables: ["Photographie", "Banque d’images", "Vidéo", "Reel"],
+  },
+
   {
     slug: "antoine-malecot-broken-race",
     title: "BROKEN RACE",
