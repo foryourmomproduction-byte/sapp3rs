@@ -69,12 +69,15 @@ const tatianaPortrait = "/assets/optimized/projects/utmb-nice-tatiana/tatiana-po
 const tatianaCourseMoment = "/assets/optimized/projects/utmb-nice-tatiana/tatiana-course-moment.jpg";
 const tatianaArrivalArea = "/assets/optimized/projects/utmb-nice-tatiana/tatiana-arrival-area.jpg";
 
-const immersiveCover = "/assets/optimized/projects/immersive/2.jpg";
+const immersiveCover = "/assets/optimized/projects/immersive/1.jpg";
 const immersive1 = "/assets/optimized/projects/immersive/1.jpg";
 const immersive2 = "/assets/optimized/projects/immersive/2.jpg";
 const immersive3 = "/assets/optimized/projects/immersive/3.jpg";
 const immersive4 = "/assets/optimized/projects/immersive/4.jpg";
 const immersive5 = "/assets/optimized/projects/immersive/5.jpg";
+const immersive6 = "/assets/optimized/projects/immersive/6.jpg";
+const immersive7 = "/assets/optimized/projects/immersive/7.jpg";
+const immersive8 = "/assets/optimized/projects/immersive/8.jpg";
 const immersiveVideoPoster = "/assets/optimized/projects/immersive/video-poster.jpg";
 
 export type ProjectMedia = {
@@ -147,11 +150,14 @@ export const projects: Project[] = [
         autoPlay: false,
         preload: "none",
       },
-      { type: "image", src: immersive1, alt: "Une participante pendant l’immersion en montagne", fit: "contain" },
-      { type: "image", src: immersive2, alt: "Les participants progressent sur le sentier de montagne", fit: "contain" },
-      { type: "image", src: immersive3, alt: "Le groupe en randonnée sur un sentier alpin", fit: "contain" },
-      { type: "image", src: immersive4, alt: "Portrait d’une participante en montagne", fit: "contain" },
-      { type: "image", src: immersive5, alt: "Un autre moment de l’expérience Immersive", fit: "contain" },
+      { type: "image", src: immersive1, alt: "Portrait d’une participante équipée de lunettes de sport", fit: "contain" },
+      { type: "image", src: immersive2, alt: "Portrait en noir et blanc d’un participant", fit: "contain" },
+      { type: "image", src: immersive3, alt: "Un participant en montagne sous le ciel bleu", fit: "contain" },
+      { type: "image", src: immersive4, alt: "Portrait d’une participante pendant la randonnée", fit: "contain" },
+      { type: "image", src: immersive5, alt: "Vue du paysage et des chalets pendant l’immersion", fit: "contain" },
+      { type: "image", src: immersive6, alt: "Un participant équipé de son sac et de ses bâtons", fit: "contain" },
+      { type: "image", src: immersive7, alt: "Détail d’une chaussure sur un sentier rocheux", fit: "contain" },
+      { type: "image", src: immersive8, alt: "Vêtement de l’équipe Immersive pendant la randonnée", fit: "contain" },
     ],
 
     context:
